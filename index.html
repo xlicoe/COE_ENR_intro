@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coe College Engineering Physics - Xiang Li</title>
+    <title>Coe College Engineering Physics - Intro by Xiang Li</title>
     <!-- Professional Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -35,13 +35,13 @@
             width: 8.5in;
             height: 11in;
             background: white;
-            padding: 0.6in 0.7in; /* Reduced vertical padding */
+            padding: 0.5in 0.7in;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             position: relative;
             display: flex;
             flex-direction: column;
             border-top: 15px solid var(--coe-crimson);
-            overflow: hidden; /* Prevents bleed */
+            overflow: hidden;
         }
 
         header {
@@ -50,7 +50,7 @@
             align-items: center;
             border-bottom: 2px solid var(--coe-gold);
             padding-bottom: 12px;
-            margin-bottom: 25px; /* Reduced margin */
+            margin-bottom: 20px;
         }
 
         .logo-placeholder {
@@ -74,7 +74,7 @@
         .brand h1 {
             font-family: 'Crimson Pro', serif;
             color: var(--coe-crimson);
-            font-size: 26pt;
+            font-size: 24pt;
             margin: 0;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -84,7 +84,7 @@
         .brand p {
             color: var(--coe-gold);
             font-weight: 700;
-            font-size: 13pt;
+            font-size: 12pt;
             margin: 3px 0 0 0;
             letter-spacing: 0.5px;
         }
@@ -92,11 +92,13 @@
         h2 {
             font-family: 'Crimson Pro', serif;
             color: var(--coe-crimson);
-            font-size: 18pt;
-            margin-top: 0;
-            margin-bottom: 15px;
+            font-size: 16pt;
+            margin-top: 15px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         h2::after {
@@ -107,15 +109,15 @@
             margin-left: 15px;
         }
 
-        .program-highlights {
+        .content-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 25px; /* Reduced margin */
+            gap: 25px;
+            margin-bottom: 15px;
         }
 
         .highlight-box {
-            font-size: 10.5pt;
+            font-size: 9.5pt;
             line-height: 1.5;
             color: var(--text-main);
         }
@@ -124,24 +126,44 @@
             color: var(--coe-crimson);
         }
 
+        .stat-banner {
+            background-color: var(--coe-crimson);
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+
+        .stat-item b {
+            display: block;
+            font-size: 14pt;
+            color: var(--coe-gold);
+        }
+
+        .stat-item span {
+            font-size: 8pt;
+            text-transform: uppercase;
+        }
+
         /* QR Code & Resources Section */
         .resources-card {
             background-color: var(--bg-gray);
             border: 1px solid #ddd;
             border-top: 5px solid var(--coe-gold);
-            padding: 25px 20px;
+            padding: 20px 15px;
+            margin-top: 10px;
             flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
 
         .resources-title {
             font-family: 'Crimson Pro', serif;
-            font-size: 16pt;
+            font-size: 14pt;
             color: var(--coe-crimson);
             text-align: center;
-            margin: 0 0 20px 0;
+            margin: 0 0 15px 0;
             text-transform: uppercase;
             letter-spacing: 1.2px;
         }
@@ -158,17 +180,15 @@
             flex-direction: column;
             align-items: center;
             background: white;
-            padding: 15px 10px;
+            padding: 10px;
             border-radius: 4px;
             border: 1px solid #eee;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
         }
 
-        /* QR Placeholder Style */
         .qr-placeholder {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 12px;
+            width: 90px;
+            height: 90px;
+            margin-bottom: 8px;
             background: #eee;
             border: 2px dashed #bbb;
             display: flex;
@@ -177,16 +197,8 @@
             position: relative;
         }
 
-        .qr-placeholder::before, .qr-placeholder::after {
-            content: "";
-            position: absolute;
-            background: #ccc;
-        }
-        .qr-placeholder::before { width: 30px; height: 2px; }
-        .qr-placeholder::after { width: 2px; height: 30px; }
-
         .qr-label {
-            font-size: 8.5pt;
+            font-size: 8pt;
             font-weight: 700;
             color: var(--coe-crimson);
             line-height: 1.2;
@@ -197,25 +209,25 @@
         }
 
         .qr-sublabel {
-            font-size: 7.5pt;
+            font-size: 7pt;
             color: var(--text-light);
-            margin-top: 5px;
+            margin-top: 4px;
         }
 
         footer {
-            margin-top: 30px; /* Reduced top margin */
+            margin-top: 20px;
             border-top: 2px solid var(--coe-gold);
-            padding-top: 15px;
+            padding-top: 12px;
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            font-size: 9.5pt;
+            font-size: 9pt;
         }
 
         .contact-info strong {
             color: var(--coe-crimson);
             font-family: 'Crimson Pro', serif;
-            font-size: 12pt;
+            font-size: 11pt;
         }
 
         @media print {
@@ -233,20 +245,41 @@
             </div>
             <div class="brand">
                 <h1>Coe College</h1>
-                <p>Engineering Physics</p>
+                <p>Engineering Physics B.S.</p>
             </div>
         </header>
 
         <section>
-            <h2>Program Highlights</h2>
-            <div class="program-highlights">
+            <h2>A New Era of Engineering</h2>
+            <div class="content-grid">
                 <div class="highlight-box">
-                    <p><strong>Premier Facilities:</strong> Peterson Hall of Science features over <strong>$3 million</strong> in advanced instrumentation, giving undergraduates hands-on experience rare for a small college environment.</p>
-                    <p><strong>National Recognition:</strong> Coe is a long-standing host for the <strong>National Science Foundation (NSF) REU</strong> program, supporting elite summer research opportunities.</p>
+                    <p><strong>B.S. in Engineering Physics:</strong> Launching in the 2024-25 academic year, this degree builds upon Coe's internationally recognized physics program—already one of the largest in Iowa.</p>
+                    <p><strong>Interdisciplinary Core:</strong> Aligned with both liberal arts traditions and rigorous engineering requirements, students sharpen critical thinking and creative problem-solving skills in high demand by the market.</p>
                 </div>
                 <div class="highlight-box">
-                    <p><strong>Proven Outcomes:</strong> Graduates secure positions at industry leaders like <strong>Google, Tesla, and NASA</strong>, or pursue advanced degrees with full funding at <strong>MIT, Harvard, and Stanford</strong>.</p>
-                    <p><strong>Unique in Iowa:</strong> Coe offers the only Engineering Physics major in the state, bridging pure science with practical engineering application.</p>
+                    <p><strong>Job Market Outlook:</strong> Engineering fields are projected to grow faster than average, with median wages expected to exceed national averages by nearly <strong>$40,000</strong>.</p>
+                    <p><strong>World-Class Faculty:</strong> Ranked <strong>No. 1</strong> for Most Accessible Professors in Iowa (No. 7 Nationally) by The Princeton Review.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="stat-banner">
+            <div class="stat-item"><b>100%</b><span>Placement Rate</span></div>
+            <div class="stat-item"><b>$15M</b><span>NSF Grants Total</span></div>
+            <div class="stat-item"><b>$3M+</b><span>Research Equipment</span></div>
+            <div class="stat-item"><b>No. 1</b><span>Internships in Iowa</span></div>
+        </div>
+
+        <section>
+            <h2>Launchpad for Success</h2>
+            <div class="content-grid">
+                <div class="highlight-box">
+                    <p><strong>Experiential Guarantee:</strong> Every Kohawk is guaranteed an internship, research project, or off-campus study. Coe is ranked <strong>No. 12 nationally</strong> for internships by The Princeton Review.</p>
+                    <p><strong>Elite Placements:</strong> Graduates have conducted research at <strong>CERN</strong> and attended prestigious programs at <strong>Oxford, MIT, and Northwestern</strong>.</p>
+                </div>
+                <div class="highlight-box">
+                    <p><strong>Financial Support:</strong> Since 1979, <strong>no Coe physics major</strong> accepted into graduate school has had to pay for their advanced degree.</p>
+                    <p><strong>Top Internship Sites:</strong> Students intern with leading innovators including <strong>NASA, GoogleX, Collins Aerospace, and Corning, Inc.</strong></p>
                 </div>
             </div>
         </section>
@@ -254,25 +287,20 @@
         <section class="resources-card">
             <h3 class="resources-title">Academic & Research Resources</h3>
             <div class="qr-grid">
-                <!-- QR 1: Engineering Physics -->
                 <div class="qr-item">
-                    <div class="qr-label">Engineering Physics Requirements</div>
-                    <div class="qr-placeholder">QR Code</div>
-                    <div class="qr-sublabel">Course Catalog & Plan</div>
+                    <div class="qr-label">Engineering Physics B.S. Requirements</div>
+                    <div class="qr-placeholder"></div>
+                    <div class="qr-sublabel">2024-25 Catalog</div>
                 </div>
-
-                <!-- QR 2: Physics -->
                 <div class="qr-item">
                     <div class="qr-label">Physics Major Requirements</div>
-                    <div class="qr-placeholder">QR Code</div>
+                    <div class="qr-placeholder"></div>
                     <div class="qr-sublabel">Academic Pathways</div>
                 </div>
-
-                <!-- QR 3: Coe REU -->
                 <div class="qr-item">
-                    <div class="qr-label">Coe REU Program Home</div>
-                    <div class="qr-placeholder">QR Code</div>
-                    <div class="qr-sublabel">Summer Research Info</div>
+                    <div class="qr-label">NSF REU Program Home</div>
+                    <div class="qr-placeholder"></div>
+                    <div class="qr-sublabel">Summer Research</div>
                 </div>
             </div>
         </section>
