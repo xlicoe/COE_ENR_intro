@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coe College Engineering Physics - Intro by Xiang Li</title>
+    <title>Coe College Engineering Physics - Intro by Xiang</title>
     <!-- Professional Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -51,6 +51,21 @@
             border-bottom: 2px solid var(--coe-gold);
             padding-bottom: 12px;
             margin-bottom: 20px;
+        }
+
+        .logo-container {
+            width: 200px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        /* Update this with your actual logo filename */
+        .logo-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
 
         .logo-placeholder {
@@ -148,7 +163,6 @@
             text-transform: uppercase;
         }
 
-        /* QR Code & Resources Section */
         .resources-card {
             background-color: var(--bg-gray);
             border: 1px solid #ddd;
@@ -185,16 +199,12 @@
             border: 1px solid #eee;
         }
 
-        .qr-placeholder {
+        /* Styles for actual images */
+        .qr-image {
             width: 90px;
             height: 90px;
             margin-bottom: 8px;
-            background: #eee;
-            border: 2px dashed #bbb;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
+            object-fit: contain;
         }
 
         .qr-label {
@@ -240,8 +250,12 @@
 
     <div class="card">
         <header>
-            <div class="logo-placeholder">
-               <img class="h-160 px w-50 px" src="webdev/Coe%20Horz.jpg" alt="Coe College Logo">
+            <div class="logo-container">
+                <!-- Replace 'coe-logo.png' with your actual logo filename -->
+                <img src="webdev/Coe%20Horz.jpg" alt="Coe College Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="logo-placeholder" style="display:none;">
+                    Coe College Logo
+                </div>
             </div>
             <div class="brand">
                 <h1>Coe College</h1>
@@ -287,19 +301,24 @@
         <section class="resources-card">
             <h3 class="resources-title">Academic & Research Resources</h3>
             <div class="qr-grid">
+                <!-- QR 1: Update 'qr-engineering.png' to your filename -->
                 <div class="qr-item">
                     <div class="qr-label">Engineering Physics B.S. Requirements</div>
-                    <div class="qr-placeholder"></div>
-                    <div class="qr-sublabel">2024-25 Catalog</div>
+                    <img src="webdev/ENG_PHY.png" alt="Engineering QR" class="qr-image" onerror="this.src='https://via.placeholder.com/90?text=QR+1'">
+                    <div class="qr-sublabel">Based on 2024-25 Catalog</div>
                 </div>
+
+                <!-- QR 2: Update 'qr-physics.png' to your filename -->
                 <div class="qr-item">
                     <div class="qr-label">Physics Major Requirements</div>
-                    <div class="qr-placeholder"></div>
-                    <div class="qr-sublabel">Academic Pathways</div>
+                    <img src="webdev/PHY.png" alt="Physics QR" class="qr-image" onerror="this.src='https://via.placeholder.com/90?text=QR+2'">
+                    <div class="qr-sublabel">Based on 2024-25 Catalog</div>
                 </div>
+
+                <!-- QR 3: Update 'qr-reu.png' to your filename -->
                 <div class="qr-item">
                     <div class="qr-label">NSF REU Program Home</div>
-                    <div class="qr-placeholder"></div>
+                    <img src="webdev/REU.png" alt="REU QR" class="qr-image" onerror="this.src='https://via.placeholder.com/90?text=QR+3'">
                     <div class="qr-sublabel">Summer Research</div>
                 </div>
             </div>
@@ -314,7 +333,7 @@
             </div>
             <div style="text-align: right; color: var(--text-light);">
                 <strong>Email: xili@coe.edu</strong><br>
-                www.coe.edu/academics
+                For more info about Coe, visit www.coe.edu/academics
             </div>
         </footer>
     </div>
