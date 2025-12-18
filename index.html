@@ -35,7 +35,7 @@
             width: 8.5in;
             height: 11in;
             background: white;
-            padding: 0.4in 0.6in; /* Slightly tightened padding to prevent overflow */
+            padding: 0.4in 0.6in;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             position: relative;
             display: flex;
@@ -46,19 +46,21 @@
 
         header {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start; 
             align-items: center;
             border-bottom: 2px solid var(--coe-gold);
-            padding-bottom: 8px; /* Reduced from 12px */
-            margin-bottom: 15px; /* Reduced from 20px */
+            padding-bottom: 12px;
+            margin-bottom: 15px;
+            gap: 15px;
         }
 
         .logo-container {
-            width: 90px; /* Slightly smaller to save vertical space */
+            width: 90px;
             height: 90px;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
+            flex-shrink: 0;
         }
 
         .logo-container img {
@@ -68,33 +70,37 @@
         }
 
         .brand {
-            text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-left: 10px; /* Moves the whole text block slightly right from the logo */
         }
 
         .brand h1 {
             font-family: 'Crimson Pro', serif;
             color: var(--coe-crimson);
-            font-size: 24pt; /* Reduced slightly from 26pt */
+            font-size: 25pt;
             margin: 0;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            line-height: 1;
+            letter-spacing: 0.5px;
+            line-height: 1.1;
         }
 
         .brand p {
             color: var(--coe-gold);
             font-weight: 700;
-            font-size: 12pt; /* Reduced slightly from 13pt */
+            font-size: 14pt; /* Increased from 13pt */
             margin: 2px 0 0 0;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
+            padding-left: 40px; /* Increased indent from 20px */
         }
 
         h2 {
             font-family: 'Crimson Pro', serif;
             color: var(--coe-crimson);
-            font-size: 16pt; /* Reduced from 17pt */
-            margin-top: 10px; /* Reduced from 15px */
-            margin-bottom: 10px; /* Reduced from 12px */
+            font-size: 17pt;
+            margin-top: 12px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             text-transform: uppercase;
@@ -117,8 +123,8 @@
         }
 
         .highlight-box {
-            font-size: 10pt; /* Adjusted for better fit */
-            line-height: 1.45;
+            font-size: 10.5pt;
+            line-height: 1.5;
             color: var(--text-main);
         }
 
@@ -133,22 +139,22 @@
         .stat-banner {
             background-color: var(--coe-crimson);
             color: white;
-            padding: 10px;
+            padding: 12px;
             display: flex;
             justify-content: space-around;
             text-align: center;
             border-radius: 4px;
-            margin: 10px 0; /* Reduced from 15px */
+            margin: 12px 0;
         }
 
         .stat-item b {
             display: block;
-            font-size: 15pt; /* Slightly smaller */
+            font-size: 16pt;
             color: var(--coe-gold);
         }
 
         .stat-item span {
-            font-size: 8pt;
+            font-size: 8.5pt;
             text-transform: uppercase;
         }
 
@@ -156,21 +162,20 @@
             background-color: var(--bg-gray);
             border: 1px solid #ddd;
             border-top: 5px solid var(--coe-gold);
-            padding: 15px 12px;
+            padding: 15px;
             margin-top: 5px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            min-height: 180px;
         }
 
         .resources-title {
             font-family: 'Crimson Pro', serif;
-            font-size: 13pt;
+            font-size: 14pt;
             color: var(--coe-crimson);
             text-align: center;
-            margin: 0 0 10px 0;
+            margin: 0 0 12px 0;
             text-transform: uppercase;
             letter-spacing: 1.2px;
         }
@@ -178,7 +183,7 @@
         .qr-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 12px;
+            gap: 15px;
             text-align: center;
         }
 
@@ -191,18 +196,18 @@
             padding: 10px;
             border-radius: 4px;
             border: 1px solid #eee;
-            height: 145px; /* Balanced height */
+            height: 155px;
         }
 
         .qr-image {
-            width: 75px; /* Adjusted size */
-            height: 75px;
+            width: 80px;
+            height: 80px;
             margin: 4px 0;
             object-fit: contain;
         }
 
         .qr-label {
-            font-size: 8pt;
+            font-size: 9pt;
             font-weight: 700;
             color: var(--coe-crimson);
             line-height: 1.1;
@@ -213,25 +218,25 @@
         }
 
         .qr-sublabel {
-            font-size: 7pt;
+            font-size: 7.5pt;
             color: var(--text-light);
             margin-top: 2px;
         }
 
         footer {
-            margin-top: 15px; /* Reduced from 25px */
+            margin-top: 15px;
             border-top: 2px solid var(--coe-gold);
-            padding-top: 12px;
+            padding-top: 15px;
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            font-size: 9.5pt;
+            font-size: 10pt;
         }
 
         .contact-info strong {
             color: var(--coe-crimson);
             font-family: 'Crimson Pro', serif;
-            font-size: 11pt;
+            font-size: 12pt;
         }
 
         @media print {
@@ -246,7 +251,7 @@
         <header>
             <div class="logo-container">
                 <img src="webdev/COE_logo.jpg" alt="Coe College Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="logo-placeholder" style="display:none; width:80px; height:40px; border:1px dashed #ccc; font-size:7pt;">Logo</div>
+                <div class="logo-placeholder" style="display:none; width:90px; height:90px; border:1px dashed #ccc; font-size:7pt; display:flex; align-items:center; justify-content:center;">Logo</div>
             </div>
             <div class="brand">
                 <h1>Coe College Engineering</h1>
