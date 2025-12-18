@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coe College Engineering Physics - Xiang Li</title>
+    <!-- Professional Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --coe-crimson: #561216;
+            --coe-gold: #A68145;
+            --text-main: #2d2d2d;
+            --text-light: #555555;
+            --bg-gray: #f4f4f4;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+        }
+
+        body {
+            background-color: #e0e0e0;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 8.5x11 Card Stock Layout */
+        .card {
+            width: 8.5in;
+            height: 11in;
+            background: white;
+            padding: 0.6in 0.7in; /* Reduced vertical padding */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border-top: 15px solid var(--coe-crimson);
+            overflow: hidden; /* Prevents bleed */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--coe-gold);
+            padding-bottom: 12px;
+            margin-bottom: 25px; /* Reduced margin */
+        }
+
+        .logo-placeholder {
+            width: 160px;
+            height: 50px;
+            border: 2px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 9pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            background: #fafafa;
+        }
+
+        .brand {
+            text-align: right;
+        }
+
+        .brand h1 {
+            font-family: 'Crimson Pro', serif;
+            color: var(--coe-crimson);
+            font-size: 26pt;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1;
+        }
+
+        .brand p {
+            color: var(--coe-gold);
+            font-weight: 700;
+            font-size: 13pt;
+            margin: 3px 0 0 0;
+            letter-spacing: 0.5px;
+        }
+
+        h2 {
+            font-family: 'Crimson Pro', serif;
+            color: var(--coe-crimson);
+            font-size: 18pt;
+            margin-top: 0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #ddd;
+            margin-left: 15px;
+        }
+
+        .program-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 25px; /* Reduced margin */
+        }
+
+        .highlight-box {
+            font-size: 10.5pt;
+            line-height: 1.5;
+            color: var(--text-main);
+        }
+
+        .highlight-box strong {
+            color: var(--coe-crimson);
+        }
+
+        /* QR Code & Resources Section */
+        .resources-card {
+            background-color: var(--bg-gray);
+            border: 1px solid #ddd;
+            border-top: 5px solid var(--coe-gold);
+            padding: 25px 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .resources-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 16pt;
+            color: var(--coe-crimson);
+            text-align: center;
+            margin: 0 0 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
+
+        .qr-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            text-align: center;
+        }
+
+        .qr-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 15px 10px;
+            border-radius: 4px;
+            border: 1px solid #eee;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        /* QR Placeholder Style */
+        .qr-placeholder {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 12px;
+            background: #eee;
+            border: 2px dashed #bbb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .qr-placeholder::before, .qr-placeholder::after {
+            content: "";
+            position: absolute;
+            background: #ccc;
+        }
+        .qr-placeholder::before { width: 30px; height: 2px; }
+        .qr-placeholder::after { width: 2px; height: 30px; }
+
+        .qr-label {
+            font-size: 8.5pt;
+            font-weight: 700;
+            color: var(--coe-crimson);
+            line-height: 1.2;
+            min-height: 2.4em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qr-sublabel {
+            font-size: 7.5pt;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+
+        footer {
+            margin-top: 30px; /* Reduced top margin */
+            border-top: 2px solid var(--coe-gold);
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            font-size: 9.5pt;
+        }
+
+        .contact-info strong {
+            color: var(--coe-crimson);
+            font-family: 'Crimson Pro', serif;
+            font-size: 12pt;
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .card { box-shadow: none; margin: 0; border-top-width: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <header>
+            <div class="logo-placeholder">
+                Coe College Logo
+            </div>
+            <div class="brand">
+                <h1>Coe College</h1>
+                <p>Engineering Physics</p>
+            </div>
+        </header>
+
+        <section>
+            <h2>Program Highlights</h2>
+            <div class="program-highlights">
+                <div class="highlight-box">
+                    <p><strong>Premier Facilities:</strong> Peterson Hall of Science features over <strong>$3 million</strong> in advanced instrumentation, giving undergraduates hands-on experience rare for a small college environment.</p>
+                    <p><strong>National Recognition:</strong> Coe is a long-standing host for the <strong>National Science Foundation (NSF) REU</strong> program, supporting elite summer research opportunities.</p>
+                </div>
+                <div class="highlight-box">
+                    <p><strong>Proven Outcomes:</strong> Graduates secure positions at industry leaders like <strong>Google, Tesla, and NASA</strong>, or pursue advanced degrees with full funding at <strong>MIT, Harvard, and Stanford</strong>.</p>
+                    <p><strong>Unique in Iowa:</strong> Coe offers the only Engineering Physics major in the state, bridging pure science with practical engineering application.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="resources-card">
+            <h3 class="resources-title">Academic & Research Resources</h3>
+            <div class="qr-grid">
+                <!-- QR 1: Engineering Physics -->
+                <div class="qr-item">
+                    <div class="qr-label">Engineering Physics Requirements</div>
+                    <div class="qr-placeholder">QR Code</div>
+                    <div class="qr-sublabel">Course Catalog & Plan</div>
+                </div>
+
+                <!-- QR 2: Physics -->
+                <div class="qr-item">
+                    <div class="qr-label">Physics Major Requirements</div>
+                    <div class="qr-placeholder">QR Code</div>
+                    <div class="qr-sublabel">Academic Pathways</div>
+                </div>
+
+                <!-- QR 3: Coe REU -->
+                <div class="qr-item">
+                    <div class="qr-label">Coe REU Program Home</div>
+                    <div class="qr-placeholder">QR Code</div>
+                    <div class="qr-sublabel">Summer Research Info</div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="contact-info">
+                <strong>Xiang Li, Ph.D.</strong><br>
+                Assistant Professor of Engineering Physics<br>
+                Peterson Hall of Science, 1st Floor<br>
+                1220 First Avenue NE, Cedar Rapids, IA 52402
+            </div>
+            <div style="text-align: right; color: var(--text-light);">
+                <strong>Email: xili@coe.edu</strong><br>
+                www.coe.edu/academics
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
