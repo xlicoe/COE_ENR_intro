@@ -6,9 +6,9 @@ V2: color correction so the printed version don't have too much purple shift. Th
 ````
 For coe-crimson:
 OLD: #561216
-NEW: #8b0a00 
+NEW: #8b0a00 #a30000
 
 For coe-gold:
 OLD: #b88a32
-New: #c58c26
+New: #c58c26 #d69215
 ````
