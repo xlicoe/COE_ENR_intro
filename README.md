@@ -15,8 +15,8 @@ New: #c58c26 #d69215
 
 V3: Switch the color theme to blue/gold. 
 ````
---coe-blue: #3b6b91; 
---coe-gold: #c58c26;
+--coe-blue: #3b6b91; -> #004a7c;
+--coe-gold: #c58c26; -> #d68e15;
 --coe-silver: #cbd1d5;
 --text-main: #2d2d2d;
 --text-light: #555555;
