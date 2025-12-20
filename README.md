@@ -14,3 +14,11 @@ New: #c58c26 #d69215
 ````
 
 V3: Switch the color theme to blue/gold. 
+````
+--coe-blue: #3b6b91; 
+--coe-gold: #c58c26;
+--coe-silver: #cbd1d5;
+--text-main: #2d2d2d;
+--text-light: #555555;
+--bg-gray: #f8f9fa;
+````
